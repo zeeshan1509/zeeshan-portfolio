@@ -1,0 +1,77 @@
+/* Navigation styles for project slider */
+.projects-container {
+    position: relative;
+    padding: 0 50px;
+    margin: 0 auto;
+    max-width: 1400px;
+    overflow: hidden;
+}
+
+.projects-slider {
+    position: relative;
+    width: 100%;
+    overflow: hidden !important;
+}
+
+.swiper-wrapper {
+    display: flex;
+    width: 100%;
+}
+
+.swiper-slide {
+    width: calc((100% - 60px) / 3) !important;
+    flex-shrink: 0;
+}
+
+/* Navigation Buttons */
+.swiper-button-next,
+.swiper-button-prev {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    z-index: 10;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--accent);
+    background: var(--secondary-bg);
+    border-radius: 50%;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
+    opacity: 0.9;
+}
+
+.swiper-button-next {
+    right: 0;
+}
+
+.swiper-button-prev {
+    left: 0;
+}
+
+.swiper-button-next:after,
+.swiper-button-prev:after {
+    font-size: 1.4rem;
+    font-weight: bold;
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+    background: var(--accent);
+    color: var(--secondary-bg);
+    transform: translateY(-50%) scale(1.1);
+}
+
+@media (max-width: 768px) {
+    .swiper-button-next,
+    .swiper-button-prev {
+        display: none;
+    }
+    
+    .projects-container {
+        padding: 0 20px;
+    }
+}

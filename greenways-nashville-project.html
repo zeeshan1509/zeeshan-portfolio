@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" type="image/x-icon" href="favicon/favicon.ico">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Greenways for Nashville Interactive Trail Map</title>
+    <link rel="stylesheet" href="assets/styles.css">
+    <link rel="stylesheet" href="assets/slider.css">
+    <link rel="stylesheet" href="assets/navigation.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        // Apply saved theme asap to prevent flash
+        (function(){
+            try{
+                var t = localStorage.getItem('theme');
+                var root = document.documentElement;
+                if(!t) t = 'dark';
+                root.classList.toggle('theme-dark', t === 'dark');
+                root.classList.toggle('theme-light', t === 'light');
+            }catch(e){}
+        })();
+    </script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-logo">
+            <h1>Sardar Zeeshan Rabbani</h1>
+        </div>
+        <ul class="navbar-links">
+            <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+            <li><a href="index.html#projects"><i class="fas fa-arrow-left"></i> Back to Projects</a></li>
+        </ul>
+        <div class="navbar-right">
+            <button class="theme-toggle" id="theme-toggle">
+                <i class="fas fa-moon"></i>
+            </button>
+        </div>
+    </nav>
+    <main class="main-content">
+        <section class="project-detail-card">
+            <div class="project-title-section">
+                <h2 class="project-title-main">Greenways for Nashville Interactive Trail Map</h2>
+                <hr class="section-divider">
+            </div>
+            <article class="project-detail-content">
+                <div class="project-detail-media">
+                    <img src="Projects/Greenways-nashville-project/Image1.png" alt="Greenways for Nashville Map Overview" class="project-img-modern project-img-shadow">
+                </div>
+                <h3 class="project-section-title">The Concept</h3>
+                <p class="project-paragraph">This project involved developing the core interactive mapping module for Greenways for Nashville, a non-profit organization dedicated to creating a network of greenways across the city. The goal was to move from a static PDF map to a dynamic, user-friendly web application that empowers residents and visitors to explore Nashville's greenway trails, plan trips, and access important information about trail surfaces, amenities, and connections—all from their phones or computers.</p>
+                <hr class="section-divider">
+                <h3 class="project-section-title">How It Works & Key Features</h3>
+                <ul class="project-feature-list">
+                    <li><b>Interactive Trail Explorer:</b> At the heart of the module is a responsive web map that displays the entire network of greenways and trail connections. Users can pan, zoom, and click on any trail segment to explore the network intuitively.</li>
+                    <li><b>Smart Filtering & Search:</b> I implemented a robust filtering system that allows users to quickly find trails based on key criteria such as name and address. This helps users tailor their outdoor experience to their preferences.</li>
+                    <li><b>Trip Planning & Information:</b> Clicking on a trail reveals a detailed popup or sidebar panel with essential information, such as trail length, a description, and points of interest. This feature acts as a digital guidebook, enabling users to plan their activities effectively.</li>
+                    <li><b>Print-Friendly Map Generation:</b> A key feature for a public-facing tool is the ability to take information on the go. The module includes functionality to generate and download a printer-friendly version of the current map view, complete with any applied filters, ensuring accessibility even without an internet connection.</li>
+                </ul>
+                <div class="project-detail-media project-media-noeffect">
+                    <img src="Projects/Greenways-nashville-project/Image2.png" alt="Greenways for Nashville Feature" class="project-img-modern project-img-noeffect">
+                </div>
+                <hr class="section-divider">
+                <h3 class="project-section-title">The Technology Behind It</h3>
+                <ul class="project-feature-list">
+                    <li><b>Frontend:</b> The interactive map interface was built using Vue.js, a progressive JavaScript framework, ensuring a modern, reactive, and maintainable codebase. The map rendering itself was likely handled by using Mapbox GL JS, chosen for its performance and mobile-friendly features.</li>
+                    <li><b>Backend:</b> A Node.js server with the Express framework was used to handle the application logic. It manages API requests, processes map data, and serves the filtered geospatial information to the frontend in efficient GeoJSON formats</li>
+                    <li><b>Data Management:</b> The spatial data for trails and amenities was processed and optimized for web delivery. The backend efficiently queries this data to power the dynamic filtering and information popups, providing a seamless user experience without full page reloads.</li>
+                </ul>
+
+                <hr class="section-divider">
+                <h3 class="project-section-title">In Summary</h3>
+                <p class="project-paragraph">Developing the mapping module for Greenways for Nashville was a project that blends technical skill with civic impact. It demonstrates my ability to build user-centric, full-stack web mapping applications that solve real-world problems. This tool plays a vital role in connecting the Nashville community with its outdoor spaces, promoting health, transportation, and environmental appreciation.</p>
+                <p class="project-paragraph">View the live project <a href="https://greenwaysfornashville.org/get-a-map/" target="_blank" rel="noopener" style="color:#6a45ff; text-decoration:underline; font-weight:600;">here</a>.</p>
+            </article>
+        </section>
+        <section id="contact" class="contact">
+            <div class="section-container">
+                <div class="section-header">
+                    <h2>Get In Touch</h2>
+                </div>
+                <div class="contact-card">
+                <div class="contact-content">
+                    <p>I'm open to opportunities and collaborations in GIS development and data science. If you have a question or a project in mind, let's talk.</p>
+                    <div class="contact-actions">
+                        <a href="mailto:zeerabbani1234@gmail.com" class="btn btn-dark">Say Hello</a>
+                        <a href="index.html#projects" class="btn btn-outline">View Projects</a>
+                    </div>
+                    <a href="mailto:zeerabbani1234@gmail.com" class="email-link">zeerabbani1234@gmail.com</a>
+                </div>
+            </div>
+        </section>
+    <!-- Footer with Social Links -->
+    <footer class="footer">
+        <div style="display: flex; flex-direction: column; align-items: center;">
+            <div class="social-links" style="margin-bottom: 0.7em;">
+                <a href="https://github.com/zeeshan1509" target="_blank" rel="noopener"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/zeeshan1509/" target="_blank" rel="noopener"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+            <div class="footer-copyright" style="text-align: center; color: var(--secondary-text); font-size: 0.95em;">
+                &copy; 2025 Sardar Zeeshan Rabbani. All rights reserved.
+            </div>
+        </div>
+    </footer>
+<script>
+// Theme toggle button logic (same as main site)
+document.addEventListener('DOMContentLoaded', function() {
+    var btn = document.getElementById('theme-toggle');
+    if (!btn) return;
+    btn.addEventListener('click', function() {
+        var root = document.documentElement;
+        var isDark = root.classList.contains('theme-dark');
+        root.classList.toggle('theme-dark', !isDark);
+        root.classList.toggle('theme-light', isDark);
+        localStorage.setItem('theme', !isDark ? 'dark' : 'light');
+    });
+});
+</script>
+</body>
+</html>

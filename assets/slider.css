@@ -1,0 +1,168 @@
+/* Projects Slider Styles */
+.projects-slider {
+    width: 100%;
+    padding: 2rem 0;
+    overflow: hidden;
+    margin-top: 2rem;
+    position: relative;
+}
+/* Container for better positioning */
+.projects-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 4rem;
+    position: relative;
+}
+
+/* Ensure slides are sized correctly */
+.swiper-wrapper {
+    display: flex;
+    align-items: stretch;
+}
+
+ .swiper-slide {
+     display: flex;
+     height: auto;
+     justify-content: center;
+     align-items: center;
+     transition: transform 0.3s ease;
+     margin-right: 2.2rem;
+ }
+/* Add left margin to the first slide for spacing from parent */
+.swiper-slide:first-child {
+    margin-left: 3.2rem;
+}
+ /* Remove margin from last slide to avoid extra space at end */
+ .swiper-slide:last-child {
+    margin-right: 3.2rem;
+ }
+
+/* Navigation Buttons */
+.swiper-button-next,
+.swiper-button-prev {
+    color: var(--accent);
+    background: var(--secondary-bg);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: all 0.3s ease;
+    opacity: 0.9;
+}
+
+
+.swiper-button-next {
+    right: -40px;
+}
+
+
+.swiper-button-prev {
+    left: -40px;
+}
+
+.swiper-button-prev .swiper-navigation-icon {
+    transform: rotate(180deg);
+}
+
+.swiper-button-next:after,
+.swiper-button-prev:after {
+    font-size: 1.4rem;
+    font-weight: bold;
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+    background: var(--accent);
+    color: var(--secondary-bg);
+    opacity: 1;
+    transform: translateY(-50%) scale(1.1);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Pagination */
+.swiper-pagination {
+    position: relative;
+    margin-top: 2rem;
+}
+
+.swiper-pagination-bullet {
+    background: var(--secondary-text);
+    opacity: 0.5;
+    width: 10px;
+    height: 10px;
+    transition: all 0.3s ease;
+}
+
+.swiper-pagination-bullet-active {
+    background: var(--accent);
+    opacity: 1;
+    width: 20px;
+    border-radius: 5px;
+}
+
+/* Project Cards */
+.project-card {
+    background: var(--secondary-bg);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+}
+
+.project-img {
+    background: var(--accent);
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 4rem;
+    color: var(--secondary-bg);
+}
+
+/* Navigation button positioning */
+.swiper-button-next {
+    right: 10px;
+}
+
+.swiper-button-prev {
+    left: 10px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+    .projects-container {
+        padding: 0 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .projects-slider {
+        padding: 1rem 0;
+    }
+    
+    .project-card {
+        max-width: 100%;
+    }
+    
+    .projects-container {
+        padding: 0 1rem;
+    }
+}
+
+    .swiper-button-next,
+    .swiper-button-prev {
+        display: none;
+    }
+

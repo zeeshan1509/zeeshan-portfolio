@@ -1,0 +1,49 @@
+Project: Automated Geospatial Pipeline for Intelligent Real Estate Parcel Analysis
+(Image Placement 1)
+
+
+The Concept
+Developed as part of the IQLand.ai team, this project involved architecting and building a sophisticated geospatial data pipeline from the ground up to solve a deceptively complex problem: automatically identifying the front, back, and sides of thousands of highly irregular land parcels. The challenge was to automatically identify and measure the frontage, back, and sides of thousands of irregular land parcels—a task trivial for a human but immensely complex for a machine. The resulting data was the foundational layer for an AI real estate agent. The core challenge was that existing GIS tools lacked the logic to handle this specific task, requiring a completely custom algorithmic solution developed in Python to transform raw, noisy cadastral data into a structured intelligence asset. Another key innovation was implementing a custom geocoding engine that used this processed data itself, eliminating reliance on external APIs.
+
+How It Works & Key Features
+The solution was a novel, multi-stage geospatial processing engine, designed and implemented entirely from first principles.
+
+Solving the "Irregular Geometry" Problem: Off-the-shelf scripts fail on real-world data. Parcel boundaries are rarely perfect rectangles; they are complex polygons made of dozens of small, non-contiguous line segments. My custom algorithm intelligently analyzed geometry, topology, and proximity to dissolve these segments into four logical sides. This involved calculating angles between segments, establishing tolerances for merging, and validating the resulting lines to ensure topological correctness.
+
+Algorithmic Frontage Identification: Simply being next to a road wasn't enough. The algorithm integrated road network data to perform spatial correlation analysis, identifying the primary frontage side based on consistent proximity and orientation. This solved ambiguities for corner lots or parcels with multiple road adjacencies.
+
+Building a Custom Geocoding Engine: A major component was developing an internal geocoding service. Instead of relying on costly and rate-limited third-party APIs, I built a reverse geocoding functionality directly into the application. This engine used the processed parcel centroids and their validated address data from the PostGIS database as its lookup table. A user or system could provide textual address and instantly receive the correct parcel ID and its coordinates, making the entire system self-contained and highly efficient.
+
+Comprehensive Parcel Profiling Engine: The pipeline was extended into a full feature extraction tool, calculating:
+
+Slope Analysis: Processed DEM data to compute average slope percentage and primary direction of slope for each parcel.
+
+Address Validation & Geocoding: Cross-referenced address points to ensure data integrity and accuracy.
+
+Spatial Statistics: Calculated precise area, perimeter, and other geometric properties for analysis.
+
+Designed for Production: The entire workflow was packaged into a robust, automated Python pipeline, capable of processing large datasets consistently and outputting the results into a meticulously designed PostgreSQL/PostGIS geodatabase (also designed by me). This database schema was optimized for high-performance querying, serving clean, reliable data to the downstream AI web application.
+
+(Image Placement 2: System Architecture Diagram)
+
+Foundation for AI and Automation: The final output wasn't just a map; it was a rich, queryable database of parcel intelligence. This structured data directly enabled other systems to generate automated architectural sketches based on side dimensions and powered an AI agent with critical physical property facts.
+
+(Image Placement 3: Geocoding Example)
+
+
+The Technology Behind It
+This project is a premier example of developing a bespoke geospatial solution where no off-the-shelf tool existed.
+
+Core Development: The entire algorithm and pipeline were built from scratch in Python, demonstrating deep problem-solving skill.
+
+Geospatial Libraries: GeoPandas, Shapely, and Fiona were used not for out-of-the-box functions, but as foundational libraries upon which the custom logic for segment dissolving, merging, and spatial analysis was constructed.
+
+Database & Geocoding Engine: PostgreSQL with PostGIS was the cornerstone, storing all processed data and acting as the high-performance backend for the custom geocoding engine, queried via a Node.js backend.
+
+Spatial Analysis & Validation: QGIS was crucial for initial data exploration, algorithm debugging, and visually validating the results at each complex stage.
+
+(Image Placement 4: Code Snippet)
+
+
+In Summary
+This project was a deep dive into algorithmic spatial problem-solving. It required moving beyond standard GIS tools to develop a novel solution for a problem with significant real-world complexity. From designing the core logic to handle irregular geometries to engineering a complete, production-ready data pipeline and a custom geocoding engine, this work showcases my ability to tackle ambiguous challenges and deliver a robust, foundational data product that enables advanced applications like AI and automated design.

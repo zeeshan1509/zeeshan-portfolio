@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" type="image/x-icon" href="favicon/favicon.ico">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Me — Sardar Zeeshan Rabbani</title>
+  <link rel="stylesheet" href="assets/styles.css" />
+  <link rel="stylesheet" href="assets/slider.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet.fullscreen/Control.FullScreen.css" />
+  <script>
+    // Apply saved theme asap to prevent flash
+    (function(){
+      try{
+        var t = localStorage.getItem('theme');
+        var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+        var root = document.documentElement;
+        if(!t) t = prefersDark ? 'dark' : 'light';
+        root.classList.toggle('theme-dark', t === 'dark');
+        root.classList.toggle('theme-light', t === 'light');
+      }catch(e){}
+    })();
+  </script>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="navbar-logo"><h1>Sardar Zeeshan Rabbani</h1></div>
+    <ul class="navbar-links">
+  <li><a href="index.html#home"><i class="fas fa-home"></i> Home</a></li>
+  <li><a href="index.html#about" class="active"><i class="fas fa-user"></i> About</a></li>
+  <li><a href="index.html#experience"><i class="fas fa-briefcase"></i> Experience</a></li>
+  <li><a href="index.html#projects"><i class="fas fa-project-diagram"></i> Projects</a></li>
+  <li><a href="index.html#skills"><i class="fas fa-tools"></i> Skills</a></li>
+  <li><a href="index.html#contact"><i class="fas fa-envelope"></i> Contact</a></li>
+    </ul>
+    <div class="navbar-right">
+      <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+        <i class="fas fa-moon"></i>
+      </button>
+      <button class="menu-toggle" id="menu-toggle" aria-label="Toggle menu">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+    <div class="nav-progress" aria-hidden="true"></div>
+  </nav>
+
+  <main class="main-content">
+    <section class="sub-hero">
+      <h1 class="hero-title" style="color:var(--primary-text); letter-spacing:1px;">About Me</h1>
+      <p class="hero-desc" style="color:var(--secondary-text); max-width:780px">A deeper look at my background, values and how I design, build and deliver geospatial products.</p>
+    </section>
+
+    <section class="about">
+      <div class="section-container">
+        <div class="section-header">
+          <h2>A Little More About Me</h2>
+        </div>
+        <div class="about-content">
+          <div class="about-text">
+            <p>Hey, I'm Zeeshan</p>
+            <p>I'm a <b>Full-Stack Geospatial Developer</b> and <b>Spatial Data Analyst</b> with a strong foundation in GIS, remote sensing, and data engineering. I specialize in building smart geospatial solutions, whether it's automating workflows, creating interactive web maps, or designing spatial databases—to turn complex spatial data into actionable insights.</p>
+            <div style="margin-top:1rem">
+              <a href="index.html#projects" class="btn btn-primary">PROJECTS</a>
+            </div>
+          </div>
+          <div class="about-image">
+            <div>
+              <img src="Images/MyImage.jpg" alt="Sardar Zeeshan Rabbani" style="width:100%;height:auto;border-radius:12px;object-fit:cover;" />
+            </div>
+          </div>
+        </div>
+      </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="about">
+      <div class="section-container">
+        <div class="section-header">
+          <h2>What Drives Me</h2>
+        </div>
+        <div class="about-content" style="display: flex; justify-content: center; width: 100%;">
+          <div class="about-text" style="display: flex; flex-direction: row; gap: 1.2em; justify-content: center; align-items: stretch; width: auto; margin-left: -4vw;">
+            <div class="about-card flip-card" style="flex:1 1 0; min-width:405px; max-width:720px;">
+              <div class="flip-card-inner">
+                <div class="flip-card-front">
+                  <b style="font-size:1.35em; display:inline-block;">Curiosity</b>
+                </div>
+                <div class="flip-card-back">
+                  <p style="">I love solving problems that sit at the crossroads of data, technology, and geography.</p>
+                </div>
+              </div>
+            </div>
+            <div class="about-card flip-card" style="flex:1 1 0; min-width:405px; max-width:900px;">
+              <div class="flip-card-inner">
+                <div class="flip-card-front">
+                  <b style="font-size:1.35em; display:inline-block;">Impact</b>
+                </div>
+                <div class="flip-card-back">
+                  <p style="">For me, it’s not just about writing code, it’s about creating solutions that help people make better decisions.</p>
+                </div>
+              </div>
+            </div>
+            <div class="about-card flip-card" style="flex:1 1 0; min-width:405px; max-width:720px;">
+              <div class="flip-card-inner">
+                <div class="flip-card-front">
+                  <b style="font-size:1.35em; display:inline-block;">Innovation</b>
+                </div>
+                <div class="flip-card-back">
+                  <p style="">From cloud-based processing to web-mapping applications, I enjoy pushing the boundaries of what geospatial tech can do.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="about">
+      <div class="section-container" style="margin: 0 auto;">
+        <div class="section-header">
+          <h2>My Journey</h2>
+        </div>
+        <div class="about-content" style="display: flex; align-items: center; justify-content: center; gap: 2.5em;">
+          <div class="about-text about-text-journey" style="border-radius: 24px; box-shadow: 0 8px 32px rgba(60,80,140,0.10); flex: 1 1 0; max-width: 600px; padding: 2.2em 2em 2em 2em; display: flex; align-items: center;">
+            <p style="font-weight:400; margin: 0;">My path into geospatial technology began with a Bachelor’s in Geoinformatics Engineering from <span id="zoom-nust">NUST, Pakistan</span>, which gave me a solid foundation in spatial analysis and data science. I went on to complete my MSc in Spatial Engineering at the <span id="zoom-twente">University of Twente, Netherlands</span>, where I deepened my expertise in using advanced geospatial approaches to address urban and environmental challenges. Along the way, I’ve gained professional experience with organizations such as <span id="zoom-arnhem">CGI Netherlands</span>, <span id="zoom-california">IQLand.ai</span>, <span id="zoom-riyadh">GeoTech</span>, and <span id="zoom-melbourne">REMAP.ai</span>, and I’ve also delivered more than 80 freelance projects worldwide through platforms like Fiverr and Upwork. Each step has added new skills and perspectives, shaping the way I approach geospatial problems today.</p>
+          </div>
+          <div class="about-image" style="flex: 1 1 0; min-width: 600px; max-width: 1350px; height: 600px; display: flex; align-items: center; justify-content: center;">
+            <div id="journey-map" style="width:100%;height:100%;border-radius:16px;overflow:hidden;"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="about">
+      <div class="section-container" style="margin: 0 auto;">
+        <div class="section-header">
+          <h2>How I Approach Projects</h2>
+        </div>
+        <div class="project-process-flow-hex" style="display: flex; justify-content: center; align-items: flex-start; gap: 2.5rem; flex-wrap: wrap; margin-bottom: 2.5rem; position: relative;">
+          <div class="process-hex-card step1">
+            <div class="hex-top">
+              <span class="hex-number">01</span>
+              <span class="hex-icon"><i class="fas fa-question-circle"></i></span>
+            </div>
+            <div class="hex-title">Understand the problem</div>
+            <div class="hex-desc">What’s the challenge and who’s impacted?</div>
+          </div>
+          <span class="process-arrow">
+            <svg width="48" height="24" viewBox="0 0 48 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M4 12h40m0 0l-7-7m7 7l-7 7" stroke="#6a45ff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+          <div class="process-hex-card step2">
+            <div class="hex-top">
+              <span class="hex-number">02</span>
+              <span class="hex-icon"><i class="fas fa-cogs"></i></span>
+            </div>
+            <div class="hex-title">Plan the solution</div>
+            <div class="hex-desc">Select the right tools—whether Python, PostGIS, or web frameworks.</div>
+          </div>
+          <span class="process-arrow">
+            <svg width="48" height="24" viewBox="0 0 48 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M4 12h40m0 0l-7-7m7 7l-7 7" stroke="#6a45ff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+          <div class="process-hex-card step3">
+            <div class="hex-top">
+              <span class="hex-number">03</span>
+              <span class="hex-icon"><i class="fas fa-robot"></i></span>
+            </div>
+            <div class="hex-title">Build & Automate</div>
+            <div class="hex-desc">Develop efficient, scalable solutions using best practices (Docker, Git, CI/CD).</div>
+          </div>
+          <span class="process-arrow">
+            <svg width="48" height="24" viewBox="0 0 48 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M4 12h40m0 0l-7-7m7 7l-7 7" stroke="#6a45ff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+          <div class="process-hex-card step4">
+            <div class="hex-top">
+              <span class="hex-number">04</span>
+              <span class="hex-icon"><i class="fas fa-check-circle"></i></span>
+            </div>
+            <div class="hex-title">Validate</div>
+            <div class="hex-desc">Test performance, usability, and accuracy.</div>
+          </div>
+          <span class="process-arrow">
+            <svg width="48" height="24" viewBox="0 0 48 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M4 12h40m0 0l-7-7m7 7l-7 7" stroke="#6a45ff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+          <div class="process-hex-card step5">
+            <div class="hex-top">
+              <span class="hex-number">05</span>
+              <span class="hex-icon"><i class="fas fa-share-square"></i></span>
+            </div>
+            <div class="hex-title">Deliver & Communicate</div>
+            <div class="hex-desc">Make it accessible—through dashboards, APIs, or interactive maps.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="about" id="proud-projects">
+      <div class="section-container" style="margin: 0 auto;">
+        <div class="section-header">
+          <h2>Projects I am proud of</h2>
+        </div>
+        <div class="proud-projects-grid">
+          <div class="proud-project-card">
+            <h3>Agromap</h3>
+            <p>Built a complete web GIS solution for agricultural monitoring with Leaflet, PostgreSQL/PostGIS, and responsive graphs.</p>
+          </div>
+          <div class="proud-project-card">
+            <h3>Automated Parcel Analysis Website</h3>
+            <p>Developed a custom geospatial pipeline for intelligent vector real estate data to be used by an AI app.</p>
+          </div>
+          <div class="proud-project-card">
+            <h3>Solar Panel Detection</h3>
+            <p>Trained a deep learning model for rooftop solar panel detection from high-resolution imagery.</p>
+          </div>
+          <div class="proud-project-card">
+            <h3>GeoGlide</h3>
+            <p>Developed a website to show animation for travel routes with several customization options</p>
+          </div>
+        </div>
+        <div style="text-align:center; margin-top:2.2em;">
+          <a href="index.html#projects" class="btn btn-primary">See more projects here</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="about" id="beyond-work">
+      <div class="beyond-work-section">
+        <div class="beyond-work-card">
+          <div class="beyond-work-header">
+            <i class="fas fa-user-astronaut beyond-work-icon"></i>
+            <span class="beyond-work-title">Beyond Work</span>
+          </div>
+          <div class="beyond-work-intro">When I am not working you'll find me</div>
+          <div class="beyond-work-pill-list">
+            <span class="beyond-work-pill"><i class="fas fa-futbol"></i> Playing sports</span>
+            <span class="beyond-work-pill"><i class="fas fa-plane"></i> Travelling</span>
+            <span class="beyond-work-pill"><i class="fas fa-gamepad"></i> Playing a game of FIFA</span>
+          </div>
+        </div>
+      </div>
+    </section>    
+  </main>
+
+  <!-- Contact Section (copied from index.html) -->
+  <section id="contact" class="contact">
+    <div class="section-container">
+      <div class="section-header">
+        <h2>Get In Touch</h2>
+      </div>
+      <div class="contact-card">
+        <div class="contact-content">
+          <p>I'm open to opportunities and collaborations in GIS development and data science. If you have a question or a project in mind, let's talk.</p>
+          <div class="contact-actions">
+            <a href="mailto:zeerabbani1234@gmail.com" class="btn btn-dark">Say Hello</a>
+            <a href="index.html#projects" class="btn btn-outline">View Projects</a>
+          </div>
+          <a href="mailto:zeerabbani1234@gmail.com" class="email-link">zeerabbani1234@gmail.com</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div style="display: flex; flex-direction: column; align-items: center;">
+      <div class="social-links" style="margin-bottom: 0.7em;">
+        <a href="https://github.com/zeeshan1509" target="_blank" rel="noopener"><i class="fab fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/zeeshan1509/" target="_blank" rel="noopener"><i class="fab fa-linkedin-in"></i></a>
+      </div>
+      <div class="footer-copyright" style="text-align: center; color: var(--secondary-text); font-size: 0.95em;">
+        &copy; 2025 Sardar Zeeshan Rabbani. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+  <script src="https://unpkg.com/leaflet.fullscreen/Control.FullScreen.js"></script>
+  <script src="scripts/main.js"></script>
+  <script>
+  // Inline map init specific to about page
+  (function(){
+    const mapEl = document.getElementById('expMap');
+    if(!mapEl || typeof L === 'undefined') return;
+
+    const map = L.map('expMap', { zoomControl: true, scrollWheelZoom: false, fullscreenControl: true });
+    // Basemaps
+    const baseLayers = {
+      'Light': L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', { maxZoom: 19, attribution: '&copy; OpenStreetMap & CARTO' }),
+      'Dark': L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', { maxZoom: 19, attribution: '&copy; OpenStreetMap & CARTO' }),
+      'OSM': L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 19, attribution: '&copy; OpenStreetMap' })
+    };
+  // Start with layer matching theme
+  const isDark = document.documentElement.classList.contains('theme-dark');
+  (isDark ? baseLayers['Dark'] : baseLayers['Light']).addTo(map);
+
+    const points = [
+      { id: 'lahore', name: 'Lahore, Pakistan', latlng: [31.5204, 74.3587], desc: '<strong>Junior GIS Developer (2021)</strong><br/>GeoMap Solutions — first web mapping features and data loaders.' },
+      { id: 'islamabad', name: 'Islamabad, Pakistan', latlng: [33.6844, 73.0479], desc: '<strong>GIS Developer (2022)</strong><br/>Urban Analytics Lab — spatial ETL, geocoding and network analysis.' },
+      { id: 'riyadh', name: 'Riyadh, Saudi Arabia', latlng: [24.7136, 46.6753], desc: '<strong>Data Scientist (2023-24)</strong><br/>Geospatial ML projects and dashboards across KSA.' },
+      { id: 'enschede', name: 'Enschede, Netherlands', latlng: [52.2215, 6.8937], desc: '<strong>M.Sc. Spatial Engineering</strong><br/>University of Twente — geospatial research & prototyping.' }
+    ];
+
+    const allBounds = L.latLngBounds(points.map(p => p.latlng));
+
+    // Pulsing markers
+    const PulseIcon = L.DivIcon.extend({ options: { className: '', html: '<span class="pulse-marker"></span>', iconSize: [18,18], iconAnchor: [9,9] } });
+    const pulseIcon = new PulseIcon();
+    const markers = points.map(p => L.marker(p.latlng, { icon: pulseIcon, title: p.name }).bindPopup(`<strong>${p.name}</strong><br/>${p.desc}`));
+    markers.forEach(m => m.addTo(map));
+
+  // Path
+  const routeLatLngs = points.map(p=>p.latlng);
+  const route = L.polyline(routeLatLngs, { color: '#6a45ff', weight: 3, opacity: .85 }).addTo(map);
+  // Plane icon for animation
+  const PlaneIcon = L.DivIcon.extend({ options: { className: '', html: '<span class="plane-marker"><i class="fas fa-plane"></i></span>', iconSize: [26,26], iconAnchor: [13,13] } });
+  const plane = L.marker(routeLatLngs[0], { icon: new PlaneIcon() }).addTo(map);
+
+    // Ensure proper centering and sizing
+  function fitAll(){ map.fitBounds(allBounds, { padding: [30,30] }); }
+    fitAll();
+    window.addEventListener('load', () => { setTimeout(()=>{ map.invalidateSize(); fitAll(); }, 50); });
+  window.addEventListener('resize', () => { if(!playing) fitAll(); });
+
+    // Tour logic (plane animates along route)
+  let playing = false; let segIndex = 0; let t = 0; // t in [0,1] within segment
+  // Time-based animation: set plane speed in km/h
+  const speedKmh = 650; // adjust for faster/slower animation
+  let lastTs = null;
+
+    function lerp(a,b,t){ return [ a[0] + (b[0]-a[0])*t, a[1] + (b[1]-a[1])*t ]; }
+    function bearing(a,b){
+      const toRad = d=>d*Math.PI/180, toDeg = r=>r*180/Math.PI;
+      const y = Math.sin(toRad(b[1]-a[1])) * Math.cos(toRad(b[0]));
+      const x = Math.cos(toRad(a[0]))*Math.sin(toRad(b[0])) - Math.sin(toRad(a[0]))*Math.cos(toRad(b[0]))*Math.cos(toRad(b[1]-a[1]));
+      return (toDeg(Math.atan2(y,x)) + 360) % 360;
+    }
+
+    function haversineKm(p1, p2){
+      const R = 6371; // km
+      const toRad = d=>d*Math.PI/180;
+      const dLat = toRad(p2[0]-p1[0]);
+      const dLon = toRad(p2[1]-p1[1]);
+      const lat1 = toRad(p1[0]);
+      const lat2 = toRad(p2[0]);
+      const a = Math.sin(dLat/2)**2 + Math.cos(lat1)*Math.cos(lat2)*Math.sin(dLon/2)**2;
+      const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
+      return R * c;
+    }
+
+    function step(ts){
+      if(!playing) { lastTs = null; return; }
+      const a = routeLatLngs[segIndex];
+      const b = routeLatLngs[(segIndex+1)%routeLatLngs.length];
+      const distKm = Math.max(0.001, haversineKm(a,b));
+      if (lastTs == null) lastTs = ts;
+      const dtSec = (ts - lastTs)/1000;
+      lastTs = ts;
+      // progress fraction for this segment based on speed
+      t += (speedKmh * dtSec) / distKm;
+      if (t >= 1){
+        t = 0;
+        segIndex = (segIndex+1)%routeLatLngs.length;
+        markers.forEach(m=>m.closePopup());
+        markers[(segIndex)%markers.length].openPopup();
+        // Fly to the plane's new segment start
+        const target = routeLatLngs[segIndex];
+        map.flyTo(target, map.getZoom(), { animate: true, duration: 1.6 });
+      }
+      const pos = lerp(a,b,t);
+      plane.setLatLng(pos);
+      const brg = bearing(a,b);
+      const el = plane.getElement();
+      if (el) {
+        const inner = el.querySelector('.plane-marker i') || el.querySelector('.plane-marker');
+        // fa-plane faces east by default; subtract 90deg to align 0deg with north
+        if (inner) inner.style.transform = `rotate(${brg - 90}deg)`;
+      }
+      requestAnimationFrame(step);
+    }
+
+  function startTour(){ if(playing) return; playing = true; lastTs = null; requestAnimationFrame(step); }
+  function stopTour(){ playing = false; lastTs = null; fitAll(); markers.forEach(m=>m.closePopup()); }
+
+    // Start/Stop control with two buttons
+  const TourCtrl = L.Control.extend({
+      options: { position: 'topright' },
+      onAdd: function(){
+        const wrap = L.DomUtil.create('div', 'map-ctrl-wrap');
+        const startBtn = L.DomUtil.create('button', 'map-ctrl-btn', wrap);
+        startBtn.textContent = 'Start tour';
+        const stopBtn = L.DomUtil.create('button', 'map-ctrl-btn', wrap);
+        stopBtn.textContent = 'Stop tour';
+        // prevent map interactions when using the control
+        L.DomEvent.disableClickPropagation(wrap);
+        L.DomEvent.on(startBtn, 'click', function(e){ L.DomEvent.stopPropagation(e); startTour(); });
+        L.DomEvent.on(stopBtn, 'click', function(e){ L.DomEvent.stopPropagation(e); stopTour(); });
+        return wrap;
+      }
+    });
+    map.addControl(new TourCtrl());
+  // Basemap layer control
+  L.control.layers(baseLayers, {}, { position: 'topleft' }).addTo(map);
+
+  // Listen for theme changes to switch basemap automatically
+  const applyBaseForTheme = () => {
+    const dark = document.documentElement.classList.contains('theme-dark');
+    // Remove current base (ensure only one)
+    Object.values(baseLayers).forEach(l => { if (map.hasLayer(l)) map.removeLayer(l); });
+    (dark ? baseLayers['Dark'] : baseLayers['Light']).addTo(map);
+  };
+  // Observe class changes on root
+  const obs = new MutationObserver(applyBaseForTheme);
+  obs.observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
+  })();
+  </script>
+</body>
+</html>

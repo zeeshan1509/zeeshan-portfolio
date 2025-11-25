@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" type="image/x-icon" href="favicon/favicon.ico">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Urban Heat Island Monitoring - Project Details</title>
+    <link rel="stylesheet" href="assets/styles.css">
+    <link rel="stylesheet" href="assets/slider.css">
+    <link rel="stylesheet" href="assets/navigation.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        // Apply saved theme asap to prevent flash
+        (function(){
+            try{
+                var t = localStorage.getItem('theme');
+                var root = document.documentElement;
+                // Always default to dark mode if not set
+                if(!t) t = 'dark';
+                root.classList.toggle('theme-dark', t === 'dark');
+                root.classList.toggle('theme-light', t === 'light');
+            }catch(e){}
+        })();
+    </script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-logo">
+            <h1>Sardar Zeeshan Rabbani</h1>
+        </div>
+        <ul class="navbar-links">
+            <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+            <li><a href="index.html#projects"><i class="fas fa-arrow-left"></i> Back to Projects</a></li>
+        </ul>
+        <div class="navbar-right">
+            <button class="theme-toggle" id="theme-toggle">
+                <i class="fas fa-moon"></i>
+            </button>
+        </div>
+    </nav>
+    <main class="main-content">
+        <section class="project-detail-card">
+            <div class="project-title-section">
+                <h2 class="project-title-main">AgroMap - An Interactive Agricultural Data Visualization Platform</h2>
+                <hr class="section-divider">
+            </div>
+            <article class="project-detail-content">
+                <div class="project-detail-media">
+                    <img src="https://via.placeholder.com/700x350?text=AgroMap+Dashboard+Overview" alt="AgroMap Dashboard Overview" class="project-img-modern">
+                </div>
+                <h3 class="project-section-title">The Concept</h3>
+                <p class="project-paragraph">AgroMap is a dynamic web application designed to visualize and analyze geographical farm data. Currently used by Conagrosemillas, one of Panama's largest rice production companies, the platform moves beyond static maps and spreadsheets. It serves as an interactive operational dashboard, enabling users to intuitively explore partner farm locations, understand regional distributions through heatmaps, and gain instant analytical insights through dynamically generated graphs. This tool empowers data-driven decision-making for agricultural planning and resource management.</p>
+                <hr class="section-divider">
+                <h3 class="project-section-title">How It Works & Key Features</h3>
+                <ul class="project-feature-list">
+                    <li><b>Interactive Leaflet Map:</b> The heart of AgroMap is a smooth, responsive map built with the Leaflet.js library. It displays farm locations as clustered markers for optimal performance, even with large datasets. Clicking a cluster zooms in to reveal individual farms, maintaining a clean UI at any zoom level.</li>
+                    <li><b>Smart Data Filtering:</b> I implemented a multi-tiered dropdown filter system. Users can start by selecting a broad category (e.g., Region), which then automatically populates the next dropdown with relevant, specific options (e.g., Counties within that Region). This chained filtering allows for precise, drill-down queries without overwhelming the user.</li>
+                    <li><b>Dynamic Data Visualization:</b> As users apply filters, the map updates instantly. More importantly, a separate dashboard panel updates in real-time to display charts and graphs (e.g., bar charts showing average yield, pie charts of crop types) that aggregate the data for the currently selected filters. This provides immediate analytical value, turning map interactions into quantifiable insights.</li>
+                    <li><b>Density Heatmap Layer:</b> Beyond individual points, AgroMap can visualize the concentration of farms using a heatmap layer. This instantly highlights areas of high agricultural activity, a crucial feature for identifying key regions at a glance.</li>
+                    <li><b>Detailed Popups:</b> Clicking on any individual farm marker reveals a popup with that specific farm's details, such as owner information, farm size, primary crops, and other relevant data stored in the database.</li>
+                </ul>
+                <div class="project-detail-media">
+                    <img src="https://via.placeholder.com/700x350?text=AgroMap+Feature+Showcase" alt="AgroMap Feature Showcase" class="project-img-modern">
+                </div>
+                <hr class="section-divider">
+                <h3 class="project-section-title">The Technology Behind It</h3>
+                <ul class="project-feature-list">
+                    <li><b>Frontend:</b> The UI is built with HTML, CSS, and JavaScript, leveraging the Leaflet library for all mapping functionalities, including marker clustering and heatmap visualization. Charts are rendered using Chart.js library.</li>
+                    <li><b>Backend:</b> A Node.js server with the Express framework handles all application logic. It manages user requests, processes data, and communicates with the database.</li>
+                    <li><b>Database & Geospatial Queries:</b> Farm location data is stored in a PostgreSQL database with the PostGIS extension. This was a critical choice, as PostGIS allows for efficient storage and querying of geographical data. The backend sends SQL queries utilizing PostGIS functions (like ST_Within or ST_Distance) to perform lightning-fast spatial filters (e.g., "find all farms within this city") that drive the dynamic filtering and map updates.</li>
+                    <li><b>Data Flow:</b> The frontend communicates with the Node.js backend asynchronously using AJAX. When a filter is changed, a request is sent to the server. The server queries the PostGIS database, returning optimized GeoJSON data which Leaflet then uses to update the map and charts without requiring a full page refresh.</li>
+                </ul>
+                <div class="project-detail-media">
+                    <img src="https://via.placeholder.com/700x350?text=AgroMap+Tech+Stack" alt="AgroMap Tech Stack" class="project-img-modern">
+                </div>
+                <hr class="section-divider">
+                <h3 class="project-section-title">In Summary</h3>
+                <p class="project-paragraph">Built for Conagrosemillas, this project demonstrates how modern web technology can transform complex operational data into an accessible and insightful tool. AgroMap proves the value of interactive dashboards in a real-world setting, helping a leading agribusiness visualize its network, analyze trends, and make data-driven decisions efficiently.</p>
+            </article>
+        </section>
+    </main>
+        <section id="contact" class="contact">
+            <div class="section-container">
+                <div class="section-header">
+                    <h2>Get In Touch</h2>
+                </div>
+                <div class="contact-card">
+                <div class="contact-content">
+                    <p>I'm open to opportunities and collaborations in GIS development and data science. If you have a question or a project in mind, let's talk.</p>
+                    <div class="contact-actions">
+                        <a href="mailto:zeerabbani1234@gmail.com" class="btn btn-dark">Say Hello</a>
+                        <a href="index.html#projects" class="btn btn-outline">View Projects</a>
+                    </div>
+                    <a href="mailto:zeerabbani1234@gmail.com" class="email-link">zeerabbani1234@gmail.com</a>
+                </div>
+            </div>
+        </section>
+
+    <!-- Footer with Social Links -->
+    <footer class="footer">
+        <div style="display: flex; flex-direction: column; align-items: center;">
+            <div class="social-links" style="margin-bottom: 0.7em;">
+                <a href="https://github.com/zeeshan1509" target="_blank" rel="noopener"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/zeeshan1509/" target="_blank" rel="noopener"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+            <div class="footer-copyright" style="text-align: center; color: var(--secondary-text); font-size: 0.95em;">
+                &copy; 2025 Sardar Zeeshan Rabbani. All rights reserved.
+            </div>
+        </div>
+    </footer>
+</body>
+<script>
+// Theme toggle button logic (same as main site)
+document.addEventListener('DOMContentLoaded', function() {
+    var btn = document.getElementById('theme-toggle');
+    if (!btn) return;
+    btn.addEventListener('click', function() {
+        var root = document.documentElement;
+        var isDark = root.classList.contains('theme-dark');
+        root.classList.toggle('theme-dark', !isDark);
+        root.classList.toggle('theme-light', isDark);
+        localStorage.setItem('theme', !isDark ? 'dark' : 'light');
+    });
+});
+</script>
+</html>

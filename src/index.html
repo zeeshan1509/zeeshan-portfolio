@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" type="image/x-icon" href="favicon/favicon.ico">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sardar Zeeshan Rabbani - GIS Engineer Portfolio</title>
+        <script>
+                // Apply saved theme asap to prevent flash
+                (function(){
+                    try{
+                        var t = localStorage.getItem('theme');
+                        var root = document.documentElement;
+                        // Always default to dark mode if not set
+                        if(!t) t = 'dark';
+                        root.classList.toggle('theme-dark', t === 'dark');
+                        root.classList.toggle('theme-light', t === 'light');
+                    }catch(e){}
+                })();
+        </script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="assets/styles.css">
+    <link rel="stylesheet" href="assets/slider.css">
+    <link rel="stylesheet" href="assets/navigation.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Top Navigation Bar -->
+    <nav class="navbar">
+        <div class="navbar-logo">
+            <h1>Sardar Zeeshan Rabbani</h1>
+        </div>
+        <ul class="navbar-links">
+            <li><a href="#home" class="active"><i class="fas fa-home"></i> Home</a></li>
+            <li><a href="#about"><i class="fas fa-user"></i> About</a></li>
+            <li><a href="#experience"><i class="fas fa-briefcase"></i> Experience</a></li>
+            <li><a href="#projects"><i class="fas fa-project-diagram"></i> Projects</a></li>
+            <li><a href="#skills"><i class="fas fa-tools"></i> Skills</a></li>
+            <li><a href="#education"><i class="fas fa-graduation-cap"></i> Education</a></li>
+            <li><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
+        </ul>
+        <div class="navbar-right">
+            <button class="theme-toggle" id="theme-toggle">
+                <i class="fas fa-moon"></i>
+            </button>
+            <button class="menu-toggle" id="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    <div class="nav-progress" aria-hidden="true"></div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+            <div class="hero-inner">
+                <h1 class="hero-title">Hey, I'm Sardar Zeeshan Rabbani</h1>
+                <h2 class="hero-subtitle">GIS Developer & Spatial Data Scientist</h2>
+                    <hr class="hero-separator">
+                <p class="hero-desc">I specialize in translating your business needs by developing geospatial solutions, automated workflows, and interactive web mapping applications that transform spatial data into actionable insights</p>
+                <a href="#projects" class="btn btn-primary">PROJECTS</a>
+            </div>
+        </section>
+        
+
+        <!-- About Section -->
+        <section id="about" class="about">
+            <div class="section-container">
+                <div class="section-header">
+                    <h2>About Me</h2>
+                </div>
+                <div class="about-content">
+                    <div class="about-text">
+                    <p>Turning Data into Maps, and Maps into Solutions</p>
+                    <p>Hi, I'm Zeeshan - a <b>Full-Stack GIS Developer</b> with over <b>3+ years of experience</b> crafting practical geospatial solutions. My work spans around building WebGIS solutions, AI and GIS integration, mobile GIS applications, spatial analysis and spatial decision support systems, disaster and real-time monitoring systems, AI pipelines, and DevOps for geospatial infrastructure.</p>
+                    <p>I focus on creating tools that make spatial data actionable - whether through automated data workflows, advanced spatial analysis, or dynamic web maps. I enjoy leveraging cutting-edge technologies to solve real-world environmental and urban challenges in a meaningful way.</p>
+                    <div style="margin-top:1rem">
+                        <a href="about.html" class="btn btn-outline">More about me</a>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <div class="about-image">
+                        <img src="Images/MyImage.jpg" alt="Sardar Zeeshan Rabbani" />
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience" class="experience">
+            <div class="section-container">
+                <div class="section-header">
+                    <h2>Work Experience</h2>
+                    <p class="section-subtitle">Over three years of experience crafting geospatial solutions as a <b>Full-Stack GIS Developer</b>, <b>Spatial Analyst</b> and <b>Software Engineer</b>.</p>
+                </div>
+                <div class="timeline">
+                <div class="timeline-line" aria-hidden="true"></div>
+
+                <!-- Current - Periegesis -->
+                <article class="timeline-item right">
+                    <div class="timeline-marker" aria-hidden="true">
+                        <span class="dot"></span>
+                        <i class="fas fa-map"></i>
+                    </div>
+                    <div class="timeline-card">
+                        <header class="timeline-header">
+                            <h3 class="timeline-role">Full-Stack GIS Developer <span class="company">@ Periegesis</span></h3>
+                            <span class="timeline-date">01/08/2023 – Current</span>
+                        </header>
+                        <p>Developing full-stack geospatial solutions including the Geotechnical Borehole Management System with 3D visualization of soil layers and Solar Market Detection Platform using deep learning & webGIS. Building backend spatial data pipelines and interactive frontend mapping interfaces. Creating disaster detection systems from social media feeds for rapid emergency response.</p>
+                        <ul class="timeline-tags">
+                            <li>3D GIS</li><li>WebGIS</li><li>Full-Stack Development</li><li>CesiumJS/ThreeJS</li><li>Spatial Analysis</li> <li>GeoDjango</li><li>Disaster Response</li><li>Solar Energy</li> <li>Real-time Monitoring</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <!-- Voltquant - Part-time Remote -->
+                <article class="timeline-item left">
+                    <div class="timeline-marker" aria-hidden="true">
+                        <span class="dot"></span>
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <div class="timeline-card">
+                        <header class="timeline-header">
+                            <h3 class="timeline-role">GIS Developer <span class="company">@ Voltquant (Part-time, Remote)</span></h3>
+                            <span class="timeline-date">10/01/2024 – 10/12/2024</span>
+                        </header>
+                        <p>Working on an AI-driven webGIS application for optimizing road networks and renewable energy development. Developing full-stack GIS solutions with backend spatial data processing and interactive frontend mapping interfaces. Implementing natural language query capabilities for spatial searches and proximity analysis.</p>
+                        <ul class="timeline-tags">
+                            <li>WebGIS</li><li>AI Integration</li><li>Full-Stack Development</li><li>Network Optimization</li><li>Geoserver</li><li>Vector Tiling Server</li><li>Renewable Energy</li><li>AWS</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <!-- Rapidev -->
+                <article class="timeline-item right">
+                    <div class="timeline-marker" aria-hidden="true">
+                        <span class="dot"></span>
+                        <i class="fas fa-satellite"></i>
+                    </div>
+                    <div class="timeline-card">
+                        <header class="timeline-header">
+                            <h3 class="timeline-role">Jr. GIS Developer <span class="company">@ Rapidev</span></h3>
+                            <span class="timeline-date">01/11/2022 – 31/07/2023</span>
+                        </header>
+                        <p>Developed AI-integrated GIS systems for military and disaster response applications. Built an AI-enabled object detection pipeline for satellite and drone imagery, enabling automated analysis for critical decision-making scenarios.</p>
+                        <ul class="timeline-tags">
+                            <li>AI/ML</li><li>Object Detection</li><li>Satellite Imagery</li><li>Disaster Response</li><li>Military Applications</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <!-- VisionTech360 -->
+                <article class="timeline-item left">
+                    <div class="timeline-marker" aria-hidden="true">
+                        <span class="dot"></span>
+                        <i class="fas fa-map-marked-alt"></i>
+                    </div>
+                    <div class="timeline-card">
+                        <header class="timeline-header">
+                            <h3 class="timeline-role">GIS Developer <span class="company">@ VisionTech360</span></h3>
+                            <span class="timeline-date">01/07/2022 – 30/10/2022</span>
+                        </header>
+                        <p>Developed modules for 'Interactive Mapping and Social Awareness,' integrating tools for buffering, multi-layer selection, and overlay analysis to provide actionable insights. Created time-lapse visualizations for operational monitoring.</p>
+                        <ul class="timeline-tags">
+                            <li>Interactive Mapping</li><li>Spatial Analysis</li><li>Buffer Analysis</li><li>Overlay Analysis</li><li>Time-lapse Visualization</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <!-- GIS Plus - Intern -->
+                <article class="timeline-item right">
+                    <div class="timeline-marker" aria-hidden="true">
+                        <span class="dot"></span>
+                        <i class="fas fa-cube"></i>
+                    </div>
+                    <div class="timeline-card">
+                        <header class="timeline-header">
+                            <h3 class="timeline-role">GIS Developer Intern <span class="company">@ GIS PLUS Total Solutions (PVT.) LTD.</span></h3>
+                            <span class="timeline-date">10/07/2021 – 28/08/2021</span>
+                        </header>
+                        <p>Created an interactive 3D property management application and advanced heatmaps using ReactJS, PostgreSQL, and geospatial libraries. Gained foundational experience in full-stack GIS development and spatial data visualization.</p>
+                        <ul class="timeline-tags">
+                            <li>ReactJS</li><li>PostgreSQL</li><li>3D Visualization</li><li>Heatmaps</li><li>Property Management</li>
+                        </ul>
+                    </div>
+                </article>
+            </div>
+            <div class="resume-download" style="text-align:center; margin: 2.5rem 0 1.5rem 0;">
+    </div>
+        <div class="resume-download" style="text-align:center; margin: 2.5rem 0 1.5rem 0;">
+                        </div>
+            <p style="font-size:1.1em; margin-bottom:0;">Want to know more? Download my <a href="Images/EUROPASS_CV_FINAL.pdf" download style="color:#6a45ff; text-decoration:underline; font-weight:600;">Resume</a>.</p>
+        </section>
+        </div>
+        </section>
+
+        <!-- Projects Section -->
+                <!-- Projects Section -->
+        <section id="projects" class="projects">
+            <div class="section-container">
+                <div class="section-header">
+                    <h2>Projects</h2>
+                </div>
+                <div class="projects-container">
+                    <div class="projects-slider swiper">
+                        <div class="swiper-wrapper">
+                            <!-- Project 1 -->
+                    <div class="swiper-slide">
+                        <div class="project-card">
+                            <div class="project-img">
+                                <i class="fas fa-leaf"></i>
+                            </div>
+                            <div class="project-content">
+                                <h3 class="project-title">Forest Cover Change Detection</h3>
+                                <p class="project-desc">Analyzed multi-temporal Sentinel-2 imagery to detect forest changes using Random Forest classifiers.</p>
+                                <div class="project-tags">
+                                    <span class="project-tag">GEE</span>
+                                    <span class="project-tag">Machine Learning</span>
+                                    <span class="project-tag">Remote Sensing</span>
+                                </div>
+                                <div class="project-links">
+                                    <a href="#"><i class="fab fa-github"></i> Code</a>
+                                    <a href="#"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 3 -->
+                    <div class="swiper-slide">
+                        <div class="project-card">
+                            <div class="project-img">
+                                <i class="fas fa-seedling"></i>
+                            </div>
+                            <div class="project-content">
+                                <h3 class="project-title">Crop Recommendation System</h3>
+                                <p class="project-desc">ML-based model to recommend optimal crops based on weather, soil type, and farm size with web interface.</p>
+                                <div class="project-tags">
+                                    <span class="project-tag">Machine Learning</span>
+                                    <span class="project-tag">Web App</span>
+                                    <span class="project-tag">Python</span>
+                                </div>
+                                <div class="project-links">
+                                    <a href="#"><i class="fab fa-github"></i> Code</a>
+                                    <a href="#"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 4 -->
+                    <div class="swiper-slide">
+                        <div class="project-card">
+                            <div class="project-img">
+                                <i class="fas fa-map"></i>
+                            </div>
+                            <div class="project-content">
+                                <h3 class="project-title">Interactive Web Mapping</h3>
+                                <p class="project-desc">Built an interactive web mapping application for visualizing geospatial data with custom layers.</p>
+                                <div class="project-tags">
+                                    <span class="project-tag">Leaflet</span>
+                                    <span class="project-tag">JavaScript</span>
+                                    <span class="project-tag">GeoJSON</span>
+                                </div>
+                                <div class="project-links">
+                                    <a href="#"><i class="fab fa-github"></i> Code</a>
+                                    <a href="#"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 5 -->
+                    <div class="swiper-slide">
+                        <div class="project-card">
+                            <div class="project-img">
+                                <i class="fas fa-database"></i>
+                            </div>
+                            <div class="project-content">
+                                <h3 class="project-title">Spatial Database Design</h3>
+                                <p class="project-desc">Designed and implemented a PostGIS database for managing large-scale spatial data.</p>
+                                <div class="project-tags">
+                                    <span class="project-tag">PostGIS</span>
+                                    <span class="project-tag">SQL</span>
+                                    <span class="project-tag">Database Design</span>
+                                </div>
+                                <div class="project-links">
+                                    <a href="#"><i class="fab fa-github"></i> Code</a>
+                                    <a href="#"><i class="fas fa-external-link-alt"></i> Documentation</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 6 -->
+                    <div class="swiper-slide">
+                        <div class="project-card">
+                            <div class="project-img">
+                                <i class="fas fa-cloud"></i>
+                            </div>
+                            <div class="project-content">
+                                <h3 class="project-title">Cloud-Based GIS Processing</h3>
+                                <p class="project-desc">Developed automated cloud-based processing pipelines for large-scale satellite imagery.</p>
+                                <div class="project-tags">
+                                    <span class="project-tag">AWS</span>
+                                    <span class="project-tag">Docker</span>
+                                    <span class="project-tag">Python</span>
+                                </div>
+                                <div class="project-links">
+                                    <a href="#"><i class="fab fa-github"></i> Code</a>
+                                    <a href="#"><i class="fas fa-external-link-alt"></i> Demo</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 7 -->
+                    <div class="swiper-slide">
+                        <div class="project-card">
+                            <div class="project-img">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <div class="project-content">
+                                <h3 class="project-title">Spatial Analysis Dashboard</h3>
+                                <p class="project-desc">Created an interactive dashboard for analyzing and visualizing urban mobility patterns.</p>
+                                <div class="project-tags">
+                                    <span class="project-tag">React</span>
+                                    <span class="project-tag">D3.js</span>
+                                    <span class="project-tag">API Integration</span>
+                                </div>
+                                <div class="project-links">
+                                    <a href="#"><i class="fab fa-github"></i> Code</a>
+                                    <a href="#"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 8 -->
+                    <div class="swiper-slide">
+                        <div class="project-card">
+                            <div class="project-img">
+                                <i class="fas fa-robot"></i>
+                            </div>
+                            <div class="project-content">
+                                <h3 class="project-title">AI-Powered Land Classification</h3>
+                                <p class="project-desc">Implemented deep learning models for automated land use classification from satellite imagery.</p>
+                                <div class="project-tags">
+                                    <span class="project-tag">Deep Learning</span>
+                                    <span class="project-tag">TensorFlow</span>
+                                    <span class="project-tag">Remote Sensing</span>
+                                </div>
+                                <div class="project-links">
+                                    <a href="#"><i class="fab fa-github"></i> Code</a>
+                                    <a href="#"><i class="fas fa-external-link-alt"></i> Research Paper</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Navigation arrows -->
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+                <!-- Pagination -->
+                <div class="swiper-pagination"></div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="skills">
+            <div class="section-container">
+                <div class="section-header">
+                    <h2>Skills</h2>
+                    <p class="section-subtitle">A focused toolkit for building data‑driven geospatial products.</p>
+                </div>
+                <div class="skills-grid">
+                <!-- Python -->
+                <div class="skill-card">
+                    <div class="skill-card-header">
+                        <span class="skill-icon"><i class="fab fa-python"></i></span>
+                        <h3>Python</h3>
+                    </div>
+                    <ul class="skill-chips">
+                        <li>Pandas</li><li>NumPy</li><li>GeoPandas</li><li>Rasterio</li><li>Shapely</li>
+                        <li>scikit‑learn</li><li>TensorFlow</li><li>FastAPI</li><li>Jupyter</li><li>GDAL</li>
+                    </ul>
+                </div>
+
+                <!-- Web App Development -->
+                <div class="skill-card">
+                    <div class="skill-card-header">
+                        <span class="skill-icon"><i class="fas fa-code"></i></span>
+                        <h3>Web App Development</h3>
+                    </div>
+                    <ul class="skill-chips">
+                        <li>JavaScript</li><li>TypeScript</li><li>Node.js</li><li>Express</li>
+                        <li>React</li><li>D3.js</li><li>Leaflet</li><li>Mapbox GL</li>
+                        <li>REST APIs</li><li>HTML5/CSS3</li><li>Vue.js3</li><li>Google Maps API</li>
+                    </ul>
+                </div>
+
+                <!-- GIS Software -->
+                <div class="skill-card">
+                    <div class="skill-card-header">
+                        <span class="skill-icon"><i class="fas fa-globe"></i></span>
+                        <h3>GIS Software</h3>
+                    </div>
+                    <ul class="skill-chips">
+                        <li>QGIS</li><li>ArcGIS Pro</li><li>ArcGIS Online</li><li>GeoServer</li>
+                        <li>ERDAS</li><li>ENVI</li><li>GRASS</li><li>Google Earth Engine</li>
+                    </ul>
+                </div>
+
+                <!-- Spatial Analysis -->
+                <div class="skill-card">
+                    <div class="skill-card-header">
+                        <span class="skill-icon"><i class="fas fa-chart-line"></i></span>
+                        <h3>Spatial Analysis</h3>
+                    </div>
+                    <ul class="skill-chips">
+                        <li>Spatial Statistics</li><li>Network Analysis</li><li>Raster Processing</li>
+                        <li>Change Detection</li><li>Geocoding</li><li>Interpolation</li><li>Spatial Data Engineering</li>
+                    </ul>
+                </div>
+
+                <!-- Databases -->
+                <div class="skill-card">
+                    <div class="skill-card-header">
+                        <span class="skill-icon"><i class="fas fa-database"></i></span>
+                        <h3>Databases</h3>
+                    </div>
+                    <ul class="skill-chips">
+                        <li>MySQL</li><li>PostgreSQL</li><li>PostGIS</li>
+                        <li>MongoDB</li>
+                    </ul>
+                </div>
+
+                <!-- Others -->
+                <div class="skill-card">
+                    <div class="skill-card-header">
+                        <span class="skill-icon"><i class="fas fa-cogs"></i></span>
+                        <h3>Others</h3>
+                    </div>
+                    <ul class="skill-chips">
+                        <li>Docker</li><li>AWS</li><li>Git</li><li>CI/CD</li>
+                        <li>Linux</li><li>Data Science</li><li>Data Automation</li>
+                        <li>AI/ML for Image Classification</li><li>Deep Learning</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education Section -->
+        <section id="education" class="education">
+            <div class="section-container">
+                <div class="section-header">
+                    <h2>Education</h2>
+                    <p class="section-subtitle">Academic training that grounds my geospatial work.</p>
+                </div>
+                <div class="edu-grid">
+                <!-- Masters -->
+                <div class="edu-card">
+                    <div class="edu-header">
+                        <span class="edu-icon"><i class="fas fa-graduation-cap"></i></span>
+                        <div>
+                            <h3>M.Sc. Spatial Engineering</h3>
+                            <p class="edu-meta">University of Twente, Netherlands</p>
+                        </div>
+                    </div>
+                    <ul class="edu-points">
+                        <li>Remote Sensing, Spatial Statistics, Geospatial ML, Stakeholder Analysis</li>
+                        <li>Enhanced by knowledge for real world applications and their implications</li>
+                    </ul>
+                </div>
+
+                <!-- Bachelors -->
+                <div class="edu-card">
+                    <div class="edu-header">
+                        <span class="edu-icon"><i class="fas fa-university"></i></span>
+                        <div>
+                            <h3>B.Eng. Geoinformatics Engineering</h3>
+                            <p class="edu-meta">NUST, Pakistan</p>
+                        </div>
+                    </div>
+                    <ul class="edu-points">
+                        <li>Cartography, Spatial Databases, Spatial Analysis, Geospatial programming</li>
+                        <li>Developed strong foundations in GIS concepts especially in using Python and Web Mapping for spatial analysis</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact">
+            <div class="section-container">
+                <div class="section-header">
+                    <h2>Get In Touch</h2>
+                </div>
+                <div class="contact-card">
+                <div class="contact-content">
+                    <p>I'm open to opportunities and collaborations in GIS development and data science. If you have a question or a project in mind, let's talk.</p>
+                    <div class="contact-actions">
+                        <a href="mailto:zeerabbani1234@gmail.com" class="btn btn-dark">Say Hello</a>
+                        <a href="#projects" class="btn btn-outline">View Projects</a>
+                    </div>
+                    <a href="mailto:zeerabbani1234@gmail.com" class="email-link">zeerabbani1234@gmail.com</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer with Social Links -->
+    <footer class="footer">
+        <div style="display: flex; flex-direction: column; align-items: center;">
+            <div class="social-links" style="margin-bottom: 0.7em;">
+                <a href="https://github.com/zeeshan1509" target="_blank" rel="noopener"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/zeeshan1509/" target="_blank" rel="noopener"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+            <div class="footer-copyright" style="text-align: center; color: var(--secondary-text); font-size: 0.95em;">
+                &copy; 2025 Sardar Zeeshan Rabbani. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="scripts/main.js"></script>
+</body>
+</html>

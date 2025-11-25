@@ -1,0 +1,37 @@
+Project: Eco City of Zwolle: Mitigating Thermal Discomfort using Spatial Analysis
+(Image Placement 1)
+
+
+The Concept
+This Master's-level spatial engineering project addressed the critical challenge of Urban Heat Islands (UHI) in the city of Zwolle, Netherlands. The goal was to move beyond theoretical analysis and develop a data-driven, actionable strategy to mitigate thermal discomfort for citizens. The project involved quantifying heat stress at a neighborhood level using a microclimate model, identifying the most vulnerable areas, and designing a suite of targeted physical interventions (like green roofs and tree planting) alongside coherent policy recommendations for the municipality.
+
+How It Works & Key Features
+The project followed a rigorous, systems-engineering approach, broken down into key phases:
+
+Advanced Geospatial & Thermal Analysis: The core of the project was the development and application of a Physiological Equivalent Temperature (PET) model. This model goes beyond simple air temperature, calculating the perceived temperature by humans based on a complex interplay of factors including solar radiation, wind speed, humidity, and the urban form (sky view factor, building materials). We processed and integrated diverse datasets—from meteorological data and high-resolution elevation models to building footprints and vegetation indices—to create a precise heat stress map of Zwolle.
+
+Identifying Intervention Hotspots: The PET model revealed neighborhoods experiencing "moderate to strong" physiological heat stress. This data was overlaid with socio-economic vulnerability indices (e.g., percentage of elderly, low-income populations) to identify priority areas where interventions would have the greatest impact on public health and livability.
+
+Designing & Modelling Targeted Interventions: We designed specific green-blue infrastructure interventions—including green roofs, cool (white) roofs, strategic tree planting, and the conversion of paved areas—for five key neighborhoods. Crucially, these interventions were not just placed arbitrarily; they were manually integrated into the geospatial model. We modified input parameters (e.g., updating the Digital Surface Model with tree canopies, altering surface albedo values for roofs) to quantitatively simulate and visualize their cooling effect using the PET model.
+
+From Analysis to Actionable Policy: The technical analysis was directly linked to practical implementation. We conducted a thorough stakeholder analysis for each neighborhood and developed a tailored policy framework. This included recommendations for financial incentives (subsidies, tax breaks), updates to urban planning standards (e.g., for parking lots), and strategies for engaging private homeowners and housing corporations, ensuring the proposed solutions were both effective and feasible.
+
+(Image Placement 2: Methodology Diagram)
+
+
+(Image Placement 3: Results Visualization)
+
+The Technology Behind It
+This project showcases expertise in advanced geospatial environmental modelling and data analysis.
+
+Geospatial Analysis & Modelling: The project was built on a ArcGIS foundation for core GIS operations and cartography. The PET model was implemented using Python in ArcGIS executing the complex PET formula.
+
+Wind & Solar Modelling: WindNinja was used to generate high-resolution wind flow models based on the urban topography, a critical input for the PET calculation.
+
+Data Synthesis: The ability to acquire, clean, and harmonize disparate datasets from sources like KNMI (weather), PDOK (building footprints), and Google Earth Engine (NDVI) was crucial.
+
+Database: Processed data and results were managed and structured for analysis using PostgreSQL/PostGIS.
+
+
+In Summary
+This project exemplifies the power of spatial engineering to tackle complex urban climate challenges. It demonstrates a full-stack competency: from developing and running a sophisticated environmental model and processing geospatial data, to translating those technical results into practical, socially-informed urban planning strategies. This end-to-end approach—from data to design to policy—provides a replicable framework for cities worldwide seeking to build resilience against climate change and create more livable urban environments.

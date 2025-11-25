@@ -1,0 +1,41 @@
+Project: Automated Solar Panel Detection from Satellite Imagery using Deep Learning
+(Image Placement 1)
+
+
+The Concept
+This project involved conducting an end-to-end feasibility study for a client in the energy sector to explore the application of deep learning for automatically identifying residential and commercial solar panels from high-resolution satellite imagery. The goal was to assess whether modern convolutional neural networks (CNNs) could accurately locate these installations at scale, providing a data-driven foundation for estimating solar energy capacity and informing grid management strategies.
+
+How It Works & Key Features
+The project followed a rigorous machine learning workflow, from data preparation to model evaluation on unseen data.
+
+Data Acquisition & Label Verification: The first critical step was sourcing and curating a large, publicly available dataset of satellite imagery with corresponding solar panel annotations. I implemented a thorough data validation process in Python, manually reviewing a subset of labels and correcting misannotations to ensure the highest quality ground truth for model training. This clean dataset was then split into training, validation, and hold-out test sets.
+
+Advanced Model Training & Experimentation: I designed and trained multiple state-of-the-art deep learning architectures to tackle this semantic segmentation task—where each pixel in an image is classified as "solar panel" or "not solar panel."
+
+Architectures Tested: I experimented with U-Net (a premier architecture for segmentation tasks), leveraging pre-trained encoders like VGG and ResNet to boost performance through transfer learning. This approach allowed the models to build upon features learned from millions of general images, improving accuracy and training efficiency.
+
+Performance Metrics: Models were evaluated based on precision, recall, and IoU (Intersection over Union) to ensure they were both accurate and reliable.
+
+Rigorous Testing & Feasibility Analysis: The final models were evaluated on a completely unseen test dataset to simulate real-world performance. This provided an unbiased estimate of accuracy and generated key metrics for the client's feasibility report, clearly outlining the potential and limitations of the technology for their specific use case.
+
+From Detection to Insights: The project scope included outlining how the segmentation masks (the detected solar panels) could be post-processed to calculate the total surface area of installations, a crucial input for estimating potential energy generation.
+
+(Image Placement 2)
+
+
+(Image Placement 3)
+
+The Technology Behind It
+This project leveraged the modern open-source Python stack for geospatial machine learning.
+
+Deep Learning Frameworks: The core modeling was implemented using TensorFlow and Keras, which provide the flexible building blocks for constructing and training complex CNN architectures like U-Net.
+
+Image & Geospatial Processing: Libraries like OpenCV, Rasterio, and GeoPandas were essential for reading, preprocessing, and manipulating the large satellite imagery files and their associated geospatial data.
+
+Data Science Ecosystem: NumPy and Pandas were used for efficient numerical computation and data manipulation throughout the pipeline, from structuring training batches to calculating evaluation metrics.
+
+Visualization: Matplotlib and Seaborn were used to plot training histories, results, and create the figures for the final client report.
+
+
+In Summary
+This project successfully demonstrated the viability of using deep learning for large-scale solar panel detection. It provided the client with a clear, evidence-based feasibility study, complete with performance benchmarks and a scalable technical workflow. From data curation to model deployment strategy, it showcases my ability to leverage cutting-edge computer vision techniques to solve practical, impactful problems in the energy and geospatial sectors.

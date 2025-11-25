@@ -1,0 +1,22 @@
+Project: AgroMap - An Interactive Agricultural Data Visualization Platform
+(Image Placement 1)
+The Concept
+AgroMap is a dynamic web application designed to visualize and analyze geographical farm data. Developed for Conagrosemillas, one of Panama's largest rice production companies, the platform moves beyond static maps and spreadsheets. It serves as an interactive operational dashboard, enabling users to intuitively explore partner farm locations, understand regional distributions through heatmaps, and gain instant analytical insights through dynamically generated graphs. This tool empowers data-driven decision-making for agricultural planning and resource management.
+How It Works & Key Features
+The application presents a clean, intuitive interface centered around a large interactive map.
+•	Interactive Leaflet Map: The heart of AgroMap is a smooth, responsive map built with the Leaflet.js library. It displays farm locations as clustered markers for optimal performance, even with large datasets. Clicking a cluster zooms in to reveal individual farms, maintaining a clean UI at any zoom level.
+•	Smart Data Filtering: I implemented a multi-tiered dropdown filter system. Users can start by selecting a broad category (e.g., Region), which then automatically populates the next dropdown with relevant, specific options (e.g., Counties within that Region). This chained filtering allows for precise, drill-down queries without overwhelming the user.
+•	Dynamic Data Visualization: As users apply filters, the map updates instantly. More importantly, a separate dashboard panel updates in real-time to display charts and graphs (e.g., bar charts showing average yield, pie charts of crop types) that aggregate the data for the currently selected filters. This provides immediate analytical value, turning map interactions into quantifiable insights.
+•	Density Heatmap Layer: Beyond individual points, AgroMap can visualize the concentration of farms using a heatmap layer. This instantly highlights areas of high agricultural activity, a crucial feature for identifying key regions at a glance.
+•	Detailed Popups: Clicking on any individual farm marker reveals a popup with that specific farm's details, such as owner information, farm size, primary crops, and other relevant data stored in the database.
+(Image Placement 2)
+The Technology Behind It
+AgroMap is a full-stack application that brings together several powerful technologies:
+•	Frontend: The UI is built with HTML, CSS, and JavaScript, leveraging the Leaflet library for all mapping functionalities, including marker clustering and heatmap visualization. Charts are rendered using a library like Chart.js or D3.js.
+•	Backend: A Node.js server with the Express framework handles all application logic. It manages user requests, processes data, and communicates with the database.
+•	Database & Geospatial Queries: Farm location data is stored in a PostgreSQL database with the PostGIS extension. This was a critical choice, as PostGIS allows for efficient storage and querying of geographical data. The backend sends SQL queries utilizing PostGIS functions (like ST_Within or ST_Distance) to perform lightning-fast spatial filters (e.g., "find all farms within this county") that drive the dynamic filtering and map updates.
+•	Data Flow: The frontend communicates with the Node.js backend asynchronously using AJAX (Fetch API or Axios). When a filter is changed, a request is sent to the server. The server queries the PostGIS database, returning optimized GeoJSON data which Leaflet then uses to update the map and charts without requiring a full page refresh.
+(Image Placement 3)
+In Summary
+Built for Conagrosemillas, this project demonstrates how modern web technology can transform complex operational data into an accessible and insightful tool. AgroMap proves the value of interactive dashboards in a real-world setting, helping a leading agribusiness visualize its network, analyze trends, and make data-driven decisions efficiently.
+

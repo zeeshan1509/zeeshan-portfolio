@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" type="image/x-icon" href="favicon/favicon.ico">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automated Geospatial Pipeline for Intelligent Real Estate Parcel Data</title>
+    <link rel="stylesheet" href="assets/styles.css">
+    <link rel="stylesheet" href="assets/slider.css">
+    <link rel="stylesheet" href="assets/navigation.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        // Apply saved theme asap to prevent flash
+        (function(){
+            try{
+                var t = localStorage.getItem('theme');
+                var root = document.documentElement;
+                if(!t) t = 'dark';
+                root.classList.toggle('theme-dark', t === 'dark');
+                root.classList.toggle('theme-light', t === 'light');
+            }catch(e){}
+        })();
+    </script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-logo">
+            <h1>Sardar Zeeshan Rabbani</h1>
+        </div>
+        <ul class="navbar-links">
+            <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+            <li><a href="index.html#projects"><i class="fas fa-arrow-left"></i> Back to Projects</a></li>
+        </ul>
+        <div class="navbar-right">
+            <button class="theme-toggle" id="theme-toggle">
+                <i class="fas fa-moon"></i>
+            </button>
+        </div>
+    </nav>
+    <main class="main-content">
+        <section class="project-detail-card">
+            <div class="project-title-section">
+                <h2 class="project-title-main">Automated Geospatial Pipeline for Intelligent Real Estate Parcel Data</h2>
+                <hr class="section-divider">
+            </div>
+            <article class="project-detail-content">
+                <div class="project-detail-media">
+                    <img src="Projects/Parcel-project/Image1.jpg" alt="Parcel Analysis Overview" class="project-img-modern project-img-shadow">
+                </div>
+                <h3 class="project-section-title">The Concept</h3>
+                <p class="project-paragraph">Developed as part of the IQLand.ai team, this project involved architecting and building a sophisticated geospatial data pipeline from the ground up to solve a deceptively complex problem: automatically identifying the front, back, and sides of thousands of highly irregular land parcels. The challenge was to automatically identify and measure the frontage, back, and sides of thousands of irregular land parcels—a task trivial for a human but immensely complex for a machine. The resulting data was the foundational layer for an AI real estate agent. The core challenge was that existing GIS tools lacked the logic to handle this specific task, requiring a completely custom algorithmic solution developed in Python to transform raw, noisy cadastral data into a structured intelligence asset. Another key innovation was implementing a custom geocoding engine that used this processed data itself, eliminating reliance on external APIs.</p>
+                <hr class="section-divider">
+                <h3 class="project-section-title">How It Works & Key Features</h3>
+                <ul class="project-feature-list">
+                    <li><b>Solving the "Irregular Geometry" Problem:</b> Off-the-shelf scripts fail on real-world data. Parcel boundaries are rarely perfect rectangles; they are complex polygons made of dozens of small, non-contiguous line segments. My custom algorithm intelligently analyzed geometry, topology, and proximity to dissolve these segments into four logical sides. This involved calculating angles between segments, establishing tolerances for merging, and validating the resulting lines to ensure topological correctness.</li>
+                    <li><b>Algorithmic Frontage Identification:</b> Simply being next to a road wasn't enough. The algorithm integrated road network data to perform spatial correlation analysis, identifying the primary frontage side based on consistent proximity and orientation. This solved ambiguities for corner lots or parcels with multiple road adjacencies.</li>
+                    <li><b>Building a Custom Geocoding Engine:</b> A major component was developing an internal geocoding service. Instead of relying on costly and rate-limited third-party APIs, I built a reverse geocoding functionality directly into the application. This engine used the processed parcel centroids and their validated address data from the PostGIS database as its lookup table. A user or system could provide textual address and instantly receive the correct parcel ID and its coordinates, making the entire system self-contained and highly efficient.</li>
+                    <li><b>Comprehensive Parcel Profiling Engine:</b> The pipeline was extended into a full feature extraction tool, calculating:
+                        <ul style="padding-left:2.2em;">
+                            <li>Slope Analysis: Processed DEM data to compute average slope percentage and primary direction of slope for each parcel.</li>
+                            <li>Address Validation & Geocoding: Cross-referenced address points to ensure data integrity and accuracy.</li>
+                            <li>Spatial Statistics: Calculated precise area, perimeter, and other geometric properties for analysis.</li>
+                        </ul>
+                    </li>
+                    <li><b>Designed for Production:</b> The entire workflow was packaged into a robust, automated Python pipeline, capable of processing large datasets consistently and outputting the results into a meticulously designed PostgreSQL/PostGIS geodatabase (also designed by me). This database schema was optimized for high-performance querying, serving clean, reliable data to the downstream AI web application.</li>
+                </ul>
+                <div class="project-detail-media project-media-noeffect">
+                    <img src="Projects/Parcel-project/Image2.jpg" alt="System Architecture Diagram" class="project-img-modern project-img-noeffect" style="width:60%;">
+                </div>
+                <div class="project-detail-media project-media-noeffect">
+                    <img src="Projects/Parcel-project/Image3.gif" alt="Geocoding Example" class="project-img-modern project-img-noeffect" style="width:60%;">
+                </div>
+                <hr class="section-divider">
+                <h3 class="project-section-title">The Technology Behind It</h3>
+                <ul class="project-feature-list">
+                    <li><b>Core Development:</b> The entire algorithm and pipeline were built from scratch in Python, demonstrating deep problem-solving skill.</li>
+                    <li><b>Geospatial Libraries:</b> GeoPandas, Shapely, and Fiona were used not for out-of-the-box functions, but as foundational libraries upon which the custom logic for segment dissolving, merging, and spatial analysis was constructed.</li>
+                    <li><b>Database & Geocoding Engine:</b> PostgreSQL with PostGIS was the cornerstone, storing all processed data and acting as the high-performance backend for the custom geocoding engine, queried via a Node.js backend.</li>
+                    <li><b>Spatial Analysis & Validation:</b> QGIS was crucial for initial data exploration, algorithm debugging, and visually validating the results at each complex stage.</li>
+                </ul>
+                <div class="project-detail-media project-media-noeffect">
+                </div>
+                <hr class="section-divider">
+                <h3 class="project-section-title">In Summary</h3>
+                <p class="project-paragraph">This project was a deep dive into algorithmic spatial problem-solving. It required moving beyond standard GIS tools to develop a novel solution for a problem with significant real-world complexity. From designing the core logic to handle irregular geometries to engineering a complete, production-ready data pipeline and a custom geocoding engine, this work showcases my ability to tackle ambiguous challenges and deliver a robust, foundational data product that enables advanced applications like AI and automated design.</p>
+            </article>
+        </section>
+        <section id="contact" class="contact">
+            <div class="section-container">
+                <div class="section-header">
+                    <h2>Get In Touch</h2>
+                </div>
+                <div class="contact-card">
+                <div class="contact-content">
+                    <p>I'm open to opportunities and collaborations in GIS development and data science. If you have a question or a project in mind, let's talk.</p>
+                    <div class="contact-actions">
+                        <a href="mailto:zeerabbani1234@gmail.com" class="btn btn-dark">Say Hello</a>
+                        <a href="index.html#projects" class="btn btn-outline">View Projects</a>
+                    </div>
+                    <a href="mailto:zeerabbani1234@gmail.com" class="email-link">zeerabbani1234@gmail.com</a>
+                </div>
+            </div>
+        </section>
+    <!-- Footer with Social Links -->
+    <footer class="footer">
+        <div style="display: flex; flex-direction: column; align-items: center;">
+            <div class="social-links" style="margin-bottom: 0.7em;">
+                <a href="https://github.com/zeeshan1509" target="_blank" rel="noopener"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/zeeshan1509/" target="_blank" rel="noopener"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+            <div class="footer-copyright" style="text-align: center; color: var(--secondary-text); font-size: 0.95em;">
+                &copy; 2025 Sardar Zeeshan Rabbani. All rights reserved.
+            </div>
+        </div>
+    </footer>
+<script>
+// Theme toggle button logic (same as main site)
+document.addEventListener('DOMContentLoaded', function() {
+    var btn = document.getElementById('theme-toggle');
+    if (!btn) return;
+    btn.addEventListener('click', function() {
+        var root = document.documentElement;
+        var isDark = root.classList.contains('theme-dark');
+        root.classList.toggle('theme-dark', !isDark);
+        root.classList.toggle('theme-light', isDark);
+        localStorage.setItem('theme', !isDark ? 'dark' : 'light');
+    });
+});
+</script>
+</body>
+</html>

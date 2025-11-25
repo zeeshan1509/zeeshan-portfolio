@@ -1,0 +1,37 @@
+Project: Greenways for Nashville Interactive Trail Map
+(Image Placement 1)
+
+
+The Concept
+This project involved developing the core interactive mapping module for Greenways for Nashville, a non-profit organization dedicated to creating a network of greenways across the city. The goal was to move from a static PDF map to a dynamic, user-friendly web application that empowers residents and visitors to explore Nashville's greenway trails, plan trips, and access important information about trail surfaces, amenities, and connections—all from their phones or computers.
+
+How It Works & Key Features
+The application serves as a central hub for greenway information, built around a highly interactive map.
+
+Interactive Trail Explorer: At the heart of the module is a responsive web map that displays the entire network of greenways and trail connections. Users can pan, zoom, and click on any trail segment to explore the network intuitively.
+
+Smart Filtering & Search: I implemented a robust filtering system that allows users to quickly find trails based on key criteria such as trail surface (e.g., paved, gravel) and specific amenities (e.g., restrooms, water fountains). This helps users tailor their outdoor experience to their preferences.
+
+Trip Planning & Information: Clicking on a trail reveals a detailed popup or sidebar panel with essential information, such as trail length, a description, and points of interest. This feature acts as a digital guidebook, enabling users to plan their activities effectively.
+
+Print-Friendly Map Generation: A key feature for a public-facing tool is the ability to take information on the go. The module includes functionality to generate and download a printer-friendly version of the current map view, complete with any applied filters, ensuring accessibility even without an internet connection.
+
+(Image Placement 2)
+
+
+The Technology Behind It
+I was responsible for the full stack of the mapping module, architecting both the frontend interface and the backend services that power it.
+
+Frontend: The interactive map interface was built using Vue.js, a progressive JavaScript framework, ensuring a modern, reactive, and maintainable codebase. The map rendering itself was likely handled by a library like Leaflet or Mapbox GL JS (based on the live site's appearance), chosen for its performance and mobile-friendly features.
+
+Backend: A Node.js server with the Express framework was used to handle the application logic. It manages API requests, processes map data, and serves the filtered geospatial information to the frontend in efficient formats like GeoJSON.
+
+Data Management: The spatial data for trails and amenities was processed and optimized for web delivery. The backend efficiently queries this data to power the dynamic filtering and information popups, providing a seamless user experience without full page reloads.
+
+
+A simple architecture diagram showing the Vue.js client making API calls to the Node.js backend.
+
+A clean code snippet showing a Vue component for the map or a Node.js API endpoint for filtering trails.
+
+In Summary
+Developing the mapping module for Greenways for Nashville was a project that blends technical skill with civic impact. It demonstrates my ability to build user-centric, full-stack web applications that solve real-world problems. This tool plays a vital role in connecting the Nashville community with its outdoor spaces, promoting health, transportation, and environmental appreciation.

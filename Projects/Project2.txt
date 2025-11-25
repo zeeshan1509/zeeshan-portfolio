@@ -1,0 +1,48 @@
+Project: Developing a Machine Learning-Based Sensor Placement Strategy for Urban Heat Island Monitoring
+(Image Placement 1)
+
+Suggestion: A compelling composite image. This could be a map of Utrecht with the existing sensor network overlaid on a satellite image, next to a visualization of your prediction uncertainty surface. This immediately shows the "before and after" scope of the project.
+
+The Concept
+This research project, conducted for my Master's thesis, addresses a critical challenge in urban climate science: identifying optimal locations for hyper-local temperature monitoring of Urban Heat Islands (UHI). The existing network of volunteer-generated sensor data often misses strategically important spots. This work developed a novel, data-driven strategy to guide the placement of new sensors by combining machine learning-based geostatistics with socio-economic vulnerability analysis, ensuring that future monitoring efforts are both scientifically robust and socially equitable.
+
+How It Works & Key Features
+The methodology follows a clear, multi-stage analytical pipeline, moving from data preparation to strategic recommendations.
+
+Data Preprocessing & Cleaning: The first step involved rigorously cleaning the existing sensor data. Using statistical methods in Python, I identified and filtered out faulty readings and sensors placed indoors, which do not accurately represent the urban outdoor climate, ensuring the highest data quality for model training.
+
+Spatial Prediction & Uncertainty Modeling: The core of the project was building a Regression-Kriging model in Python. This advanced geostatistical technique combines a regression model with spatial interpolation.
+
+Predictor Variables: The model used a suite of high-resolution morphological factors—including building height, density, green/water coverage, and Sky View Factor—to predict temperature variations across Utrecht.
+
+Target Variable: The cleaned temperature readings from the existing sensor network.
+
+Uncertainty Mapping: A key output was not just a prediction surface, but an associated prediction uncertainty surface. Areas with high uncertainty indicate locations where the model lacks confidence due to a lack of data or complex, unmeasured local factors—making them prime candidates for new sensors.
+
+(Image Placement 2)
+
+Suggestion: Use your provided Research_Elements.png flowchart here to visually guide the reader through the process described above.
+
+Integrating Socio-Economic Vulnerability: To ensure the strategy addressed human impact, I overlayed the uncertainty data with socio-economic indicators (e.g., population density, age, income). This highlighted areas that are both poorly understood by the current model and highly vulnerable to the health impacts of extreme heat.
+
+Strategic Cluster Identification: Using clustering algorithms on the combined uncertainty and vulnerability data, I identified specific, prioritized zones for sensor deployment. This provided city planners with a clear, actionable map for expanding the monitoring network effectively.
+
+(Image Placement 3) (Image Placement 4)
+
+Suggestion: A set of two or three small maps showing the progression of results: 1) The predicted temperature surface, 2) The uncertainty surface, and 3) The final map with strategic clusters highlighted over the socio-economic layer.
+
+The Technology Behind It
+This project is a showcase of advanced geospatial data science implemented with open-source tools.
+
+Data Processing & Analysis: The entire data pipeline—from cleaning and statistical analysis to machine learning modeling—was built in Python.
+
+Geospatial & Machine Learning Libraries: I leveraged powerful libraries including GeoPandas for spatial data manipulation, Scikit-learn for the regression modelling, and SciPy and PyKrige for the geostatistical interpolation and uncertainty quantification.
+
+Visualization & GIS: QGIS was indispensable for creating high-quality, publication-ready cartographic visualizations of the input data and model results, and for working with spatial file formats.
+
+(Image Placement 5)
+
+Suggestion: A clean, well-commented snippet of your Python code, perhaps showing the setup of the Regression-Kriging model or the calculation of the uncertainty metric. This adds technical credibility.
+
+In Summary
+This thesis project demonstrates the power of integrating machine learning, geostatistics, and social science to solve a complex urban planning challenge. By moving beyond simple data visualization to predictive uncertainty modeling, it provides a scientifically-grounded, ethical framework for deploying environmental sensor networks that can make cities more resilient to climate change.
