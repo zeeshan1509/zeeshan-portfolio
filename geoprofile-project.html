@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" type="image/x-icon" href="favicon/favicon.ico">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geoprofile - Geotechnical Information Management Platform</title>
+    <link rel="stylesheet" href="assets/styles.css">
+    <link rel="stylesheet" href="assets/slider.css">
+    <link rel="stylesheet" href="assets/navigation.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        (function(){
+            try{
+                var t = localStorage.getItem('theme');
+                var root = document.documentElement;
+                if(!t) t = 'dark';
+                root.classList.toggle('theme-dark', t === 'dark');
+                root.classList.toggle('theme-light', t === 'light');
+            }catch(e){}
+        })();
+    </script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-logo">
+            <h1>Sardar Zeeshan Rabbani</h1>
+        </div>
+        <ul class="navbar-links">
+            <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+            <li><a href="index.html#projects"><i class="fas fa-arrow-left"></i> Back to Projects</a></li>
+        </ul>
+        <div class="navbar-right">
+            <button class="theme-toggle" id="theme-toggle">
+                <i class="fas fa-moon"></i>
+            </button>
+        </div>
+    </nav>
+    <main class="main-content">
+        <section class="project-detail-card">
+            <div class="project-title-section">
+                <h2 class="project-title-main">Geoprofile - Geotechnical Information Management Platform</h2>
+                <hr class="section-divider">
+            </div>
+            <article class="project-detail-content">
+                <div class="project-detail-media">
+                    <img src="Projects/geoprofile/gp2.png" alt="Geoprofile Platform Overview" class="project-img-modern project-img-shadow" style="width:75%;max-width:75%;height:auto;">
+                </div>
+                <h3 class="project-section-title">The Concept</h3>
+                <p class="project-paragraph">A comprehensive geotechnical information management system that visualizes soil layers, borehole data in 3D, and integrates spatial analysis with DEM, satellite imagery, IFC file georeferencing, and interactive mapping capabilities for geotechnical engineering and site investigation.</p>
+                <hr class="section-divider">
+                <h3 class="project-section-title">Key Features</h3>
+                <ul class="project-feature-list">
+                    <li><b>3D Borehole Visualization:</b> Interactive 3D representation of soil layers and borehole data using Three.js, enabling detailed subsurface exploration and stratigraphic analysis.</li>
+                    <li><b>IFC File Integration:</b> Support for georeferencing and uploading IFC (Industry Foundation Classes) files to 3D space, enabling BIM model visualization and spatial integration with geotechnical data.</li>
+                    <li><b>Terrain & Imagery Analysis:</b> Integrated DEM and high-resolution satellite imagery for terrain profiling, slope analysis, and contextual site visualization.</li>
+                    <li><b>Interactive Mapping & Navigation:</b> OpenLayers-powered multi-layer maps with spatial querying, street view, and route finding for site visualization and field planning.</li>
+                    <li><b>Data Management:</b> Centralized storage and retrieval of geotechnical reports, borehole logs, soil samples, and laboratory test results with spatial indexing.</li>
+                </ul>
+                <div class="project-detail-media project-media-noeffect">
+                    <div style="display: flex; flex-direction: column; gap: 1em; align-items: center;">
+                        <div style="display: flex; gap: 1em; justify-content: center;">
+                            <img src="Projects/geoprofile/gp1.png" alt="Geoprofile 3D Visualization" class="project-img-modern project-img-noeffect" style="max-width: 320px; min-width: 180px; width: 100%; height: auto; border-radius: 8px;" />
+                            <img src="Projects/geoprofile/gp3.png" alt="Geoprofile Analysis Tools" class="project-img-modern project-img-noeffect" style="max-width: 320px; min-width: 180px; width: 100%; height: auto; border-radius: 8px;" />
+                        </div>
+                        <div style="display: flex; gap: 1em; justify-content: center;">
+                            <img src="Projects/geoprofile/gp4.png" alt="Geoprofile Mapping Interface" class="project-img-modern project-img-noeffect" style="max-width: 320px; min-width: 180px; width: 100%; height: auto; border-radius: 8px;" />
+                            <img src="Projects/geoprofile/gp5.png" alt="Geoprofile Data Management" class="project-img-modern project-img-noeffect" style="max-width: 320px; min-width: 180px; width: 100%; height: auto; border-radius: 8px;" />
+                        </div>
+                    </div>
+                </div>
+                <hr class="section-divider">
+                <h3 class="project-section-title">Technology Stack</h3>
+                <ul class="project-feature-list">
+                    <li><b>3D Visualization:</b> Three.js for rendering soil layers, borehole profiles, and subsurface geological structures in interactive 3D environments.</li>
+                    <li><b>Web Mapping:</b> OpenLayers for 2D mapping interface with WMS/WMTS support and custom tile layers for satellite imagery and DEM data.</li>
+                    <li><b>Frontend:</b> React for building responsive UI components with real-time data updates and interactive geotechnical analysis tools.</li>
+                    <li><b>Backend:</b> Node.js with Express for API services, data processing, and integration with geotechnical databases and imagery servers.</li>
+                    <li><b>Database:</b> PostgreSQL with PostGIS for spatial data storage, enabling complex geospatial queries on borehole locations and subsurface data.</li>
+                    <li><b>Routing & Navigation:</b> Integration with routing APIs for optimal path calculation between survey sites and project locations.</li>
+                </ul>
+                <hr class="section-divider">
+                <h3 class="project-section-title">Impact</h3>
+                <p class="project-paragraph">Geoprofile streamlines geotechnical data management by combining 3D subsurface visualization with comprehensive spatial analysis tools. The platform enhances decision-making for engineering projects through integrated access to borehole data, terrain analysis, and satellite imagery. Built with Three.js, OpenLayers, and React, it demonstrates advanced capabilities in 3D geospatial visualization and full-stack GIS development for specialized engineering applications.</p>
+                <p>This project is not accessible to the public. For more details, feel free to contact me.</p>
+            </article>
+        </section>
+        <section id="contact" class="contact">
+            <div class="section-container">
+                <div class="section-header">
+                    <h2>Get In Touch</h2>
+                </div>
+                <div class="contact-card">
+                <div class="contact-content">
+                    <p>I'm open to opportunities and collaborations in GIS development and data science. If you have a question or a project in mind, let's talk.</p>
+                    <div class="contact-actions">
+                        <a href="mailto:zeerabbani1234@gmail.com" class="btn btn-dark">Say Hello</a>
+                        <a href="index.html#projects" class="btn btn-outline">View Projects</a>
+                    </div>
+                    <a href="mailto:zeerabbani1234@gmail.com" class="email-link">zeerabbani1234@gmail.com</a>
+                </div>
+            </div>
+        </section>
+    <!-- Footer with Social Links -->
+    <footer class="footer">
+        <div style="display: flex; flex-direction: column; align-items: center;">
+            <div class="social-links" style="margin-bottom: 0.7em;">
+                <a href="https://github.com/zeeshan1509" target="_blank" rel="noopener"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/zeeshan1509/" target="_blank" rel="noopener"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+            <div class="footer-copyright" style="text-align: center; color: var(--secondary-text); font-size: 0.95em;">
+                &copy; 2025 Sardar Zeeshan Rabbani. All rights reserved.
+            </div>
+        </div>
+    </footer>
+<script>
+// Theme toggle button logic (same as main site)
+document.addEventListener('DOMContentLoaded', function() {
+    var btn = document.getElementById('theme-toggle');
+    if (!btn) return;
+    btn.addEventListener('click', function() {
+        var root = document.documentElement;
+        var isDark = root.classList.contains('theme-dark');
+        root.classList.toggle('theme-dark', !isDark);
+        root.classList.toggle('theme-light', isDark);
+        localStorage.setItem('theme', !isDark ? 'dark' : 'light');
+    });
+});
+</script>
+</body>
+</html>
