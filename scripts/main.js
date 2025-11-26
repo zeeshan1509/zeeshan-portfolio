@@ -156,8 +156,8 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initialize Leaflet map for My Journey section
     if (document.getElementById('journey-map')) {
         window.journeyMap = L.map('journey-map', {
-            center: [52.2, 5.3], // Centered on the Netherlands
-            zoom: 5,
+            center: [33.6844, 60], // Centered on Islamabad/Pakistan region
+            zoom: 4,
             zoomControl: false,
             attributionControl: false
         });
@@ -224,9 +224,11 @@ document.addEventListener('DOMContentLoaded', function() {
             iconAnchor: [16, 32],
             popupAnchor: [0, -32]
         });
-    window.islamabadMarker = L.marker([33.6844, 73.0479], { icon: educationIcon }).bindPopup("Islamabad, Pakistan<br>Bachelor's: NUST");
-    window.enschedeMarker = L.marker([52.2215, 6.8937], { icon: educationIcon }).bindPopup("Enschede, Netherlands<br>MSc: University of Twente");
-    var eduLayer = L.layerGroup([window.islamabadMarker, window.enschedeMarker]);
+        window.islamabadMarker = L.marker([33.6844, 73.0479], { icon: educationIcon }).bindPopup("Islamabad, Pakistan<br>Bachelor's: NUST");
+        var rawalpindiMarker = L.marker([33.5889, 73.2236], { icon: educationIcon }).bindPopup("Rawalpindi, Pakistan<br>Work: Full Stack GIS Developer");
+        var dubaiMarker = L.marker([25.2048, 55.2708], { icon: educationIcon }).bindPopup("Dubai, UAE<br>Work: Geospatial Developer");
+        var ukMarker = L.marker([51.5074, -0.1278], { icon: educationIcon }).bindPopup("United Kingdom<br>Work: GIS Developer");
+        var eduLayer = L.layerGroup([window.islamabadMarker, rawalpindiMarker, dubaiMarker, ukMarker]);
     eduLayer.addTo(window.journeyMap);
 
         // Add work markers layer
@@ -237,10 +239,6 @@ document.addEventListener('DOMContentLoaded', function() {
             iconAnchor: [16, 32],
             popupAnchor: [0, -32]
         });
-        window.riyadhMarker = L.marker([24.7136, 46.6753], { icon: workIcon }).bindPopup("Riyadh, Saudi Arabia");
-        window.arnhemMarker = L.marker([51.9851, 5.8987], { icon: workIcon }).bindPopup("Arnhem, Netherlands");
-        window.melbourneMarker = L.marker([-37.8136, 144.9631], { icon: workIcon }).bindPopup("Melbourne, Australia");
-        window.californiaMarker = L.marker([36.7783, -119.4179], { icon: workIcon }).bindPopup("California, USA");
         var blueAreaMarker = L.marker([33.7101, 73.0551], { icon: workIcon }).bindPopup("Blue Area, Islamabad");
         var workLayer = L.layerGroup([
             window.riyadhMarker, window.arnhemMarker, window.melbourneMarker, window.californiaMarker, blueAreaMarker

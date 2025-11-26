@@ -38,7 +38,7 @@ portfolio-website
 - JavaScript
 
 ## Author
-Sardar Zeeshan Rabbani - GIS Engineer & Spatial Data Scientist
+Sardar Zeeshan Rabbani - Full stack GIS Developer & Spatial Data Scientist
 
 ## License
 This project is licensed under the MIT License.
